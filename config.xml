@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.agely.mobile"
         version   = "1.0.0">
-    <name>Agely Mobile</name>
+    <name>Agely Mobile Teste</name>
 
     <description>
-        Agely Mobile
+        Agely Mobile Teste
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
