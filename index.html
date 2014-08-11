@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset='uft-8' />
 </head>
-<body>
+<body onload="onLoad();">
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript" src="childbrowser.js"></script>
@@ -21,6 +21,11 @@
 		</div>
 
 		<script>
+			
+			function onLoad(){
+              
+			  document.addEventListener("deviceready", onDeviceReady, true);
+        	}
 			
 			function sairMobile(){
             
