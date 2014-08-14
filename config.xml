@@ -28,7 +28,9 @@
     <preference name="webviewbounce"    value="false" />
 
     <icon src="res/icon/icon.png" />
-
+	
+	<access origin="*" /> 
+	
     <!-- <gap:splash src="res/screen/screen.png"  />  -->
 
     <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
