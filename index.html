@@ -21,11 +21,21 @@
 		</div>
 
 		<script>
-			function abrir() {
 			
-				alert("inicio");
+			document.addEventListener("deviceready", onDeviceReady, false);
+		
+			function onDeviceReady() {
+				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location, '_blank', 'location=yes');
+				 ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
+				 ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
+				 ref.addEventListener('exit', function() { alert(event.type); });
+			}
+			
+			//function abrir() {
+			
+				//alert("inicio");
 				
-				alert(window.location);
+				//alert(window.location);
 				//window.open("menu.html", '_self', 'location=yes');
 				
 				//window.open("http://192.168.0.2:8888/mobile", '_self', 'location=yes');
@@ -33,7 +43,7 @@
 				//window.open("http://127.0.0.1:8888/mobile?tela=login&local="+window.location+"", '_self', 'location=yes');
 				//window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location+"", '_self', 'location=yes');
 				
-				window.plugins.childBrowser.showWebPage( "http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location+"", {showLocationBar:true} );
+				//window.plugins.childBrowser.showWebPage( "http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location+"", {showLocationBar:true} );
 				
 				/*alert("inicio");
 			
@@ -49,8 +59,8 @@
 					window.open("menu.html", '_self', 'location=yes');
 				}
 				*/
-			}
-			setTimeout("abrir()", 2000);
+			//}
+			//setTimeout("abrir()", 2000);
 		</script>
 		<div align='center'><img src='css/carregando.gif' /></div>
 
