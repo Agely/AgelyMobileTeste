@@ -40,7 +40,7 @@
 				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", 'agelymobile', 'location=no');
 				 ref.addEventListener('loadstop', abrir);
 				 
-				 ref.addEventListener('backbutton', fechar);
+				 document.addEventListener('backbutton', fechar);
 			}
 			
 			function fechar(){
@@ -69,7 +69,7 @@
 						var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=listarProduto&codbarras="+ result.text, 'agelymobile', 'location=no');
 						ref.addEventListener('loadstop', abrir);
 						
-						 ref.addEventListener('backbutton', fechar);
+						 document.addEventListener('backbutton', fechar);
 						
 					}, function (error) { 
 					
