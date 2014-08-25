@@ -22,57 +22,26 @@
 
 		<script>
 			
-			document.addEventListener("deviceready", onDeviceReady, false);
-		
-			function onDeviceReady() {
-				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location, '_blank', 'location=no');
-				 //ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-				 //ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-				 //ref.addEventListener('exit', function() { alert(event.type); });
-				ref.addEventListener('loadstop', abrir);
+			function iniciar() {
+			
+				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", '_blank', 'location=no');
+				 ref.addEventListener('loadstop', abrir);
 			}
 			
 			function abrir(event){
 				
-				alert(event.type + ' - ' + event.url);
-				
 				if(event.url.indexOf("?tela=sair")>=0){
 					
-					alert("saindo...");
 					navigator.app.exitApp();
+				
+				}else if(event.url.indexOf("?tela=codigoBarras")>=0){
+					
+					window.open("codigoDeBarras.html", '_blank', 'location=no');
 				}
+				
 			} 
 			
-			//function abrir() {
-			
-				//alert("inicio");
-				
-				//alert(window.location);
-				//window.open("menu.html", '_self', 'location=yes');
-				
-				//window.open("http://192.168.0.2:8888/mobile", '_self', 'location=yes');
-				
-				//window.open("http://127.0.0.1:8888/mobile?tela=login&local="+window.location+"", '_self', 'location=yes');
-				//window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location+"", '_self', 'location=yes');
-				
-				//window.plugins.childBrowser.showWebPage( "http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location+"", {showLocationBar:true} );
-				
-				/*alert("inicio");
-			
-				var networkState = navigator.connection.type;
-
-				alert(networkState);
-				
-				if ((networkState == Connection.UNKNOWN) || (networkState == Connection.NONE)) {
-					alert("sem conexao");
-					window.open("semconexao.html", '_self', 'location=yes');
-				} else {
-					alert("com conexao");
-					window.open("menu.html", '_self', 'location=yes');
-				}
-				*/
-			//}
-			//setTimeout("abrir()", 2000);
+			setTimeout("iniciar()", 2000);
 		</script>
 		<div align='center'><img src='css/carregando.gif' /></div>
 
