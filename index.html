@@ -32,11 +32,14 @@
 			{
 			 navigator.app.exitApp();
 			}
+		 
 						
 			function iniciar() {
 			
 				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", 'agelymobile', 'location=no');
 				 ref.addEventListener('loadstop', abrir);
+				 
+				 $(window).on('focus', function() { ref.show(); });
 			}
 			
 			function abrir(event){
