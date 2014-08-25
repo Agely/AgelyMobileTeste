@@ -36,14 +36,15 @@
 				
 				}else if(event.url.indexOf("?tela=codigoBarras")>=0){
 					
-					window.open("codigoDeBarras.html", '_blank', 'location=no');
+					window.open("codigoDeBarras.html", '_self', 'location=no');
 				}
 				
 			} 
 			
-			setTimeout("iniciar()", 2000);
+			setTimeout("iniciar()", 1000);
+			
 		</script>
 		<div align='center'><img src='css/carregando.gif' /></div>
-
+	
 </body>
 </html>
