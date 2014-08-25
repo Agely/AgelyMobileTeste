@@ -48,7 +48,7 @@
 						
 			function iniciar() {
 			
-				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", '_blank', 'location=no');
+				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", 'agelymobile', 'location=no');
 				 ref.addEventListener('loadstop', abrir);
 			}
 			
@@ -70,7 +70,7 @@
 						"Format: " + result.format + "\n" + 
 						"Cancelled: " + result.cancelled);  
 			
-						var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=listarProduto&codbarras="+ result.text, '_self', 'location=no');
+						var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=listarProduto&codbarras="+ result.text, 'agelymobile', 'location=no');
 						ref.addEventListener('loadstop', abrir);
 						
 			
