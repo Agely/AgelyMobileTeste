@@ -22,11 +22,16 @@
 
 		<script>
 			
-			document.addEventListener("backbutton", function(e){
+			document.addEventListener("deviceready", onDeviceReady, false);
+			
+			function onDeviceReady() {
 				
-				e.preventDefault();
-				navigator.app.exitApp();			
-			}, false);
+				document.addEventListener("backbutton", onBackKeyDown, false);
+			}
+			function onBackKeyDown() 
+			{
+			 navigator.app.exitApp();
+			}
 						
 			function iniciar() {
 			
