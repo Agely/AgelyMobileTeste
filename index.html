@@ -22,9 +22,33 @@
 
 		<script>
 			
+			document.addEventListener('deviceready', function() {
+
+				document.addEventListener("backbutton", ShowExitDialog, false);
+			
+			}, false);
+			
+			function ShowExitDialog() {
+				navigator.notification.confirm(
+						("Deseja Sair?"), // message
+						alertexit, // callback
+						'Agely Mobile', // title
+						'SIM,NAO' // buttonName
+				);
+		
+			}
+			
+			function alertexit(button){
+
+					if(button=="1" || button==1){
+			
+						navigator.app.exitApp();
+					}
+			}
+						
 			function iniciar() {
 			
-				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", '_blank', 'location=no');
+				 var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login", '_self', 'location=no');
 				 ref.addEventListener('loadstop', abrir);
 			}
 			
