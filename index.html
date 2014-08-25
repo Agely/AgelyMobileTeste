@@ -36,9 +36,25 @@
 				
 				}else if(event.url.indexOf("?tela=codigoBarras")>=0){
 					
-					window.open("codigoDeBarras.html", '_self', 'location=no');
+					//window.open("codigoDeBarras.html", '_self', 'location=no');
+					var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+					scanner.scan( function (result) { 
+			
+						alert("We got a barcode\n" + 
+						"Result: " + result.text + "\n" + 
+						"Format: " + result.format + "\n" + 
+						"Cancelled: " + result.cancelled);  
+			
+						var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=pesquisaProduto&codbarras="+ result.text, '_self', 'location=no');
+						ref.addEventListener('loadstop', abrir);
+						
+			
+					}, function (error) { 
+					
+						alert("Scanning failed: ", error); 
+					} );
 				}
-				
 			} 
 			
 			setTimeout("iniciar()", 1000);
