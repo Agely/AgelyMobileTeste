@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Agely Mobile Teste</title>
+	<title>Agely Mobile</title>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.3.min.css">
-    <link rel="stylesheet" href="css/padrao.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile-1.4.3.min.js"></script>
 	
     <meta name="format-detection" content="telephone=yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="barcodescanner.js"></script>
-    <script type="text/javascript" src="childbrowser.js"></script>
-    
-    <script>
-		
-		$(document).ready(function() {
-            
-			$("#iframeGeral").hide();
-			$("#carregando").show();
-        });	
-		
-		function sairMobile(){
-		
-			alert("dreamweaver");
-			navigator.app.exitApp();
-		}
-		
-		setTimeout("exibirIframe()", 2000);
-		
-		function exibirIframe(){
-			
-			$("#iframeGeral").show();
-			$("#carregando").hide();
-			
-			//http://sistema.agely.com.br/mobile_teste/mobile?tela=login
-			//http://127.0.0.1:8888/mobile?tela=login
-			$("#iframeGeral").attr("src","http://sistema.agely.com.br/mobile_teste/mobile?tela=login")
-				.attr("height",Number($(window).height())-5);
-		}
-	</script>
+    <meta charset='uft-8' />
 </head>
 <body>
-        
-		<iframe id="iframeGeral" width="100%"></iframe>
-		<div id="carregando">	
-            <div align="center"> 
-                <img src="img\logo.png">
-                
-            </div>
-    
-            <div align='center'><img src='css/carregando.gif' /></div>
+		<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="barcodescanner.js"></script>
+        <script type="text/javascript" src="childbrowser.js"></script>
+
+
+		<div align="center"> 
+			<img src="img\logo.png">
 		</div>
+
+		<script>
+			function abrir() {
+				
+				alert(window.location);
+				//window.open("menu.html", '_self', 'location=yes');
+				
+				//window.open("http://192.168.0.2:8888/mobile", '_self', 'location=yes');
+				window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=login&local="+window.location+"", '_self', 'location=yes');
+				
+				/*alert("inicio");
+			
+				var networkState = navigator.connection.type;
+
+				alert(networkState);
+				
+				if ((networkState == Connection.UNKNOWN) || (networkState == Connection.NONE)) {
+					alert("sem conexao");
+					window.open("semconexao.html", '_self', 'location=yes');
+				} else {
+					alert("com conexao");
+					window.open("menu.html", '_self', 'location=yes');
+				}
+				*/
+			}
+			setTimeout("abrir()", 2000);
+		</script>
+		<div align='center'><img src='css/carregando.gif' /></div>
+
 </body>
 </html>
