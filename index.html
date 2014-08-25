@@ -22,29 +22,11 @@
 
 		<script>
 			
-			document.addEventListener('deviceready', function() {
-
-				document.addEventListener("backbutton", ShowExitDialog, false);
-			
+			document.addEventListener("backbutton", function(e){
+				
+				e.preventDefault();
+				navigator.app.exitApp();			
 			}, false);
-			
-			function ShowExitDialog() {
-				navigator.notification.confirm(
-						("Deseja Sair?"), // message
-						alertexit, // callback
-						'Agely Mobile', // title
-						'SIM,NAO' // buttonName
-				);
-		
-			}
-			
-			function alertexit(button){
-
-					if(button=="1" || button==1){
-			
-						navigator.app.exitApp();
-					}
-			}
 						
 			function iniciar() {
 			
