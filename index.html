@@ -35,6 +35,12 @@
 			function abrir(event){
 				
 				alert(event.type + ' - ' + event.url);
+				
+				if(event.url.indexOf("?tela=sair")>=0){
+					
+					alert("saindo...");
+					navigator.app.exitApp();
+				}
 			} 
 			
 			//function abrir() {
