@@ -61,10 +61,10 @@
 
 					scanner.scan( function (result) { 
 			
-						alert("We got a barcode\n" + 
+						/*alert("We got a barcode\n" + 
 						"Result: " + result.text + "\n" + 
 						"Format: " + result.format + "\n" + 
-						"Cancelled: " + result.cancelled);  
+						"Cancelled: " + result.cancelled); */ 
 			
 						var ref = window.open("http://sistema.agely.com.br/mobile_teste/mobile?tela=listarProduto&codbarras="+ result.text, 'agelymobile', 'location=no');
 						ref.addEventListener('loadstop', abrir);
@@ -81,7 +81,7 @@
 			setTimeout("iniciar()", 1000);
 			
 		</script>
-		<div align='center'><img src='css/carregando.gif' /></div>
+		<!--<div align='center'><img src='css/carregando.gif' /></div>-->
 	
 </body>
 </html>
